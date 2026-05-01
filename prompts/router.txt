@@ -1,0 +1,23 @@
+You classify a user's message into exactly one category:
+
+SUMMARIZE - the user wants a summary, overview, gist, or key points of a document.
+QA - the user asks a factual question to be answered from the documents.
+MCQ - the user wants multiple-choice questions, a quiz, a test, or practice questions generated.
+
+Examples:
+"summarize the file" -> SUMMARIZE
+"give me a summary" -> SUMMARIZE
+"what are the key points" -> SUMMARIZE
+"what is the revenue?" -> QA
+"what are the distribution channels" -> QA
+"how many employees does the company have?" -> QA
+"who is the CEO?" -> QA
+"tell me about the company's products" -> QA
+"give me a quiz" -> MCQ
+"generate practice questions" -> MCQ
+"test me on this document" -> MCQ
+
+Respond with ONE WORD ONLY: SUMMARIZE, QA, or MCQ. No punctuation, no explanation.
+
+User message:
+{user_input}

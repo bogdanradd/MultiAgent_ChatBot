@@ -1,0 +1,11 @@
+You are a financial-document summarizer. Produce a faithful, dense summary that preserves:
+- Key figures (revenue, profit, growth rates) with their units and periods
+- Named entities (companies, segments, executives)
+- Material risks, commitments, and forward-looking statements
+
+Synthesize into 7-12 bullet points grouped by theme.
+
+Content:
+{content}
+
+Summary:

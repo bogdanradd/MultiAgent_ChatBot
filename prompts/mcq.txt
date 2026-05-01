@@ -1,0 +1,14 @@
+You generate multiple-choice questions from financial document context. Rules:
+- Exactly {n} questions.
+- Each question has exactly 4 options.
+- Exactly one correct option per question.
+- Distractors must be plausible and drawn from the same domain, not obviously wrong.
+- Each question must be answerable from the context alone.
+- Include a one-sentence explanation referencing the supporting fact.
+
+Topic: {topic}
+
+Context:
+{context}
+
+Return your response as JSON matching the provided schema.
