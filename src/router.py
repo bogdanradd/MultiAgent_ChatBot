@@ -69,12 +69,18 @@ def _parse_crewai_mcqs(raw: str) -> list:
         items = json.loads(json_match.group())
         mcqs = []
         for item in items:
+            options = item.get('options', [])[:4]
+            if len(options) < 4:
+                continue
+            answer_index = item.get('correct_answer_index',
+                           item.get('correctAnswerIndex',
+                           item.get('answer_index', 0)))
             mcqs.append(MCQ(
                 question=item.get('question', ''),
-                options=item.get('options', []),
-                answer_index=item.get('correct_answer_index', item.get('answer_index', 0)),
+                options=options,
+                answer_index=min(answer_index, 3),
                 explanation=item.get('explanation', '')
             ))
-        return mcqs
+        return mcqs if mcqs else raw
     except (json.JSONDecodeError, Exception):
         return raw
